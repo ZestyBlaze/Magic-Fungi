@@ -1,0 +1,34 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+issueTrackerURL="https://github.com/ZestyBlaze/Magic-Fungi/issues"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+
+# A display name for the mod
+displayName="${mod_name}"
+#updateJSONURL="https://change.me.example.invalid/updates.json"
+displayURL="https://github.com/ZestyBlaze/Magic-Fungi"
+logoFile="assets/magicfungi/icon.png"
+credits="Luligabi for the original mod and concept!"
+authors="${mod_authors}"
+description='''${mod_description}'''
+
+[[mixins]]
+config="${mod_id}.mixins.json"
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="${neo_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
