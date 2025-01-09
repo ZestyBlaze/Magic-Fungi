@@ -1,0 +1,16 @@
+{
+  "block.magicfungi.clypeus_mushroom": "Clypeus Mushroom",
+  "block.magicfungi.impetus_mushroom": "Impetus Mushroom",
+  "block.magicfungi.morbus_mushroom": "Morbus Mushroom",
+  "block.magicfungi.utilis_mushroom": "Utilis Mushroom",
+  "block.magicfungi.vivifica_mushroom": "Vivifica Mushroom",
+  "itemGroup.magicfungi": "Magic Fungi",
+  "magicfungi.glyph": "%s Glyph",
+  "magicfungi.glyph.action_type": "Action Type: %s",
+  "magicfungi.glyph.parasitus": "Parasitus",
+  "magicfungi.glyph.pluviam": "Pluviam",
+  "magicfungi.glyph.pudicitiam": "Pudicitiam",
+  "magicfungi.glyph.type": "Type: %s",
+  "magicfungi.tooltip.hold_shift": "Hold Shift to View Glyph Stats",
+  "magicfungi.tooltip.no_execution": "This Glyph has no Spell Execution Written for it"
+}

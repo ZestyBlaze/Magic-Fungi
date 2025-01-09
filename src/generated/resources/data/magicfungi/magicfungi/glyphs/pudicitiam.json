@@ -1,0 +1,15 @@
+{
+  "action": "entity",
+  "execute": {
+    "entity_type_conversion": {
+      "conversions": {
+        "minecraft:zoglin": "minecraft:hoglin",
+        "minecraft:zombie_horse": "minecraft:horse",
+        "minecraft:zombie_villager": "minecraft:villager",
+        "minecraft:zombified_piglin": "minecraft:piglin"
+      }
+    }
+  },
+  "mushroom": "vivifica",
+  "name": "magicfungi.glyph.pudicitiam"
+}

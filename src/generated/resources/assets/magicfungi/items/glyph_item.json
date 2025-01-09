@@ -1,0 +1,47 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "magicfungi:item/glyph_item_impetus"
+        },
+        "when": "impetus"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "magicfungi:item/glyph_item_clypeus"
+        },
+        "when": "clypeus"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "magicfungi:item/glyph_item_utilis"
+        },
+        "when": "utilis"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "magicfungi:item/glyph_item_vivifica"
+        },
+        "when": "vivifica"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "magicfungi:item/glyph_item_morbus"
+        },
+        "when": "morbus"
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "magicfungi:item/glyph_item"
+    },
+    "property": "magicfungi:mushroom_type"
+  }
+}

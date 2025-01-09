@@ -9,7 +9,7 @@ version="${mod_version}"
 
 # A display name for the mod
 displayName="${mod_name}"
-#updateJSONURL="https://change.me.example.invalid/updates.json"
+updateJSONURL="https://raw.githubusercontent.com/ZestyBlaze/Magic-Fungi/refs/heads/1.21.4-neo/update.json"
 displayURL="https://github.com/ZestyBlaze/Magic-Fungi"
 logoFile="assets/magicfungi/icon.png"
 credits="Luligabi for the original mod and concept!"

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "magicfungi:item/glyph_item",
+    "layer1": "magicfungi:item/glyph_item_vivifica"
+  }
+}
