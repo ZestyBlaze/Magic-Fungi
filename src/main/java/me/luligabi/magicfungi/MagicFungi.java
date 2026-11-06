@@ -29,9 +29,6 @@ public class MagicFungi {
 
     @SubscribeEvent
     public void commonSetup(FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> {
-            TabFillingRegistry.register(ItemRegistry.MF_TAB.getKey(), ItemRegistry.GLYPH.get());
-        });
     }
 
     public static ResourceLocation createID(String id) {

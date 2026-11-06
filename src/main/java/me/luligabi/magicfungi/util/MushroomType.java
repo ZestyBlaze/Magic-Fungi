@@ -1,42 +1,65 @@
 package me.luligabi.magicfungi.util;
 
-import com.mojang.serialization.Codec;
 import net.minecraft.ChatFormatting;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.chat.Component;
 import net.minecraft.util.StringRepresentable;
-import net.neoforged.neoforge.network.codec.NeoForgeStreamCodecs;
-import org.apache.commons.lang3.StringUtils;
-
-import java.util.Locale;
 
 public enum MushroomType implements StringRepresentable {
-    IMPETUS(ChatFormatting.RED),
-    CLYPEUS(ChatFormatting.AQUA),
-    UTILIS(ChatFormatting.LIGHT_PURPLE),
-    VIVIFICA(ChatFormatting.GREEN),
-    MORBUS(ChatFormatting.GRAY);
+    IMPETUS(Component.translatable("mushroomType.magicfungi.impetus"), Component.translatable("mushroomType.magicfungi.impetus.stats"), "impetus"),
+    CLYPEUS(Component.translatable("mushroomType.magicfungi.clypeus"), Component.translatable("mushroomType.magicfungi.clypeus.stats"), "clypeus"),
+    UTILIS(Component.translatable("mushroomType.magicfungi.utilis"), Component.translatable("mushroomType.magicfungi.utilis.stats"), "utilis"),
+    VIVIFICA(Component.translatable("mushroomType.magicfungi.vivifica"), Component.translatable("mushroomType.magicfungi.vivifica.stats"), "vivifica"),
+    MORBUS(Component.translatable("mushroomType.magicfungi.morbus"), Component.translatable("mushroomType.magicfungi.morbus.stats"), "morbus"),
 
-    private final ChatFormatting formatting;
+    // Unknown
+    INCOGNITA(Component.translatable("mushroomType.magicfungi.incognita"), Component.translatable("mushroomType.magicfungi.incognita.stats"), "incognita");
 
-    MushroomType(ChatFormatting formatting) {
-        this.formatting = formatting;
+    private final Component fancyName;
+    private final Component statsName;
+    private final String id;
+
+    MushroomType(Component fancyName, Component statsName, String id) {
+        this.fancyName = fancyName;
+        this.statsName = statsName;
+        this.id = id;
     }
 
-    public static final Codec<MushroomType> CODEC = StringRepresentable.fromValues(MushroomType::values);
+    public Component getFancyName() {
+        return fancyName;
+    }
 
-    public static final StreamCodec<FriendlyByteBuf, MushroomType> STREAM_CODEC = NeoForgeStreamCodecs.enumCodec(MushroomType.class);
+    public Component getStatsName() {
+        return statsName;
+    }
 
-    public ChatFormatting getFormatting() {
-        return formatting;
+    public String getId() {
+        return id;
+    }
+
+    public static ChatFormatting getLightColor(MushroomType mushroomType) {
+        return switch (mushroomType) {
+            case IMPETUS -> ChatFormatting.RED;
+            case CLYPEUS -> ChatFormatting.AQUA;
+            case UTILIS -> ChatFormatting.LIGHT_PURPLE;
+            case VIVIFICA -> ChatFormatting.GREEN;
+            case MORBUS -> ChatFormatting.GRAY;
+            default -> ChatFormatting.WHITE;
+        };
+    }
+
+    public static ChatFormatting getDarkColor(MushroomType mushroomType) {
+        return switch (mushroomType) {
+            case IMPETUS -> ChatFormatting.DARK_RED;
+            case CLYPEUS -> ChatFormatting.DARK_AQUA;
+            case UTILIS -> ChatFormatting.DARK_PURPLE;
+            case VIVIFICA -> ChatFormatting.DARK_GREEN;
+            case MORBUS -> ChatFormatting.DARK_GRAY;
+            default -> ChatFormatting.WHITE;
+        };
     }
 
     @Override
     public String getSerializedName() {
-        return name().toLowerCase(Locale.ROOT);
-    }
-
-    public String getCapitalizedName() {
-        return StringUtils.capitalize(getSerializedName());
+        return getId();
     }
 }

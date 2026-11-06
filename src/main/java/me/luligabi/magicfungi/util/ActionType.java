@@ -1,28 +1,21 @@
 package me.luligabi.magicfungi.util;
 
-import com.mojang.serialization.Codec;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.util.StringRepresentable;
-import net.neoforged.neoforge.network.codec.NeoForgeStreamCodecs;
-import org.apache.commons.lang3.StringUtils;
+import net.minecraft.network.chat.Component;
 
-import java.util.Locale;
+public enum ActionType {
+    BLOCK(Component.translatable("actionType.magicfungi.block")),
+    ENTITY(Component.translatable("actionType.magicfungi.entity")),
+    PLAYER(Component.translatable("actionType.magicfungi.player")),
+    WORLD(Component.translatable("actionType.magicfungi.world")),
+    UNKNOWN(Component.translatable("actionType.magicfungi.unknown"));
 
-public enum ActionType implements StringRepresentable {
-    BLOCK,
-    ENTITY,
-    WORLD;
+    private final Component translatableText;
 
-    public static final Codec<ActionType> CODEC = StringRepresentable.fromValues(ActionType::values);
-    public static final StreamCodec<FriendlyByteBuf, ActionType> STREAM_CODEC = NeoForgeStreamCodecs.enumCodec(ActionType.class);
-
-    @Override
-    public String getSerializedName() {
-        return name().toLowerCase(Locale.ROOT);
+    ActionType(Component translatableText) {
+        this.translatableText = translatableText;
     }
 
-    public String getCapitalizedName() {
-        return StringUtils.capitalize(getSerializedName());
+    public Component getTranslatableText() {
+        return translatableText;
     }
 }

@@ -1,7 +1,6 @@
 package me.luligabi.magicfungi.registry;
 
 import me.luligabi.magicfungi.MagicFungi;
-import me.luligabi.magicfungi.item.GlyphItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
